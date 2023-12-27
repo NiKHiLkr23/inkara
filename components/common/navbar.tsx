@@ -6,6 +6,7 @@ import { MenuSquare, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { DiscordIcon, TwitterIcon } from "./icons";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "About us", href: "/about-us" },
@@ -18,14 +19,16 @@ interface NavbarProps {}
 const Navbar: FC<NavbarProps> = ({}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const pathname = usePathname();
+
   const handleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50  flex flex-col max-w-7xl mx-auto ">
-      <nav className="flex items-center justify-between pt-5 px-5 lg:px-8  ">
-        <div className=" w-16 h-16 z-10 ">
+    <header className="sticky inset-x-0 top-0 z-50  flex flex-col w-full max-w-7xl mx-auto ">
+      <nav className="flex items-center justify-between pt-5 px-3 lg:px-8 ">
+        <div className="z-10 ">
           <Link
             href="/"
             prefetch={false}
@@ -33,12 +36,11 @@ const Navbar: FC<NavbarProps> = ({}) => {
           >
             <span className="sr-only">Inkara</span>
             <Image
-              // src="https://inkara.s3.ap-south-1.amazonaws.com/IMG-20231217-WA0002.jpg"
-              src="https://inkara.s3.ap-south-1.amazonaws.com/InkaraLogo.png"
+              src="/images/inkara-logo.png"
               width={100}
               height={100}
               alt=""
-              className="scale-[2] "
+              className=" w-36"
             />
           </Link>
         </div>
@@ -59,7 +61,13 @@ const Navbar: FC<NavbarProps> = ({}) => {
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900"
             >
-              <Button onClick={handleMobileMenu} variant="theme">
+              <Button
+                onClick={handleMobileMenu}
+                variant="theme"
+                className={`${
+                  pathname === item.href ? "bg-theme text-white" : ""
+                }`}
+              >
                 {item.name}
               </Button>
             </Link>
@@ -71,7 +79,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <Button variant="theme">Wallet</Button>
           </Link> */}
 
-          <TwitterIcon className="w-8 h-8 cursor-pointer active:scale-95" />
+          <TwitterIcon className="w-8 h-8 text-[#f0bb40] cursor-pointer active:scale-95" />
           <DiscordIcon className="w-8 h-8 cursor-pointer active:scale-95" />
         </div>
       </nav>
@@ -82,9 +90,9 @@ const Navbar: FC<NavbarProps> = ({}) => {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black bg-opacity-90 p-5 sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black  py-5 px-3 sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <div className="w-16 h-16 z-10 bg-black bg-opacity-50">
+            <div className="z-10 ">
               <Link
                 href="/"
                 prefetch={false}
@@ -92,12 +100,11 @@ const Navbar: FC<NavbarProps> = ({}) => {
               >
                 <span className="sr-only">Inkara</span>
                 <Image
-                  // src="https://inkara.s3.ap-south-1.amazonaws.com/IMG-20231217-WA0002.jpg"
-                  src="https://inkara.s3.ap-south-1.amazonaws.com/InkaraLogo.png"
+                  src="/images/inkara-logo.png"
                   width={100}
                   height={100}
                   alt=""
-                  className="scale-[2] "
+                  className=" w-36"
                 />
               </Link>
             </div>
@@ -133,7 +140,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               </div>
 
               <div className="flex items-center justify-center gap-10">
-                <TwitterIcon className="w-8 h-8 cursor-pointer active:scale-95" />
+                <TwitterIcon className="w-8 h-8 text-[#f0bb40] cursor-pointer active:scale-95" />
                 <DiscordIcon className="w-8 h-8 cursor-pointer active:scale-95" />
               </div>
             </div>
