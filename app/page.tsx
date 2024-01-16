@@ -8,6 +8,8 @@ import { useStore } from "@/store/store";
 import Footer from "@/components/common/footer";
 import Navbar from "@/components/common/navbar";
 import VideoBackground from "@/components/common/videoBackground";
+import { DiscordIcon, TwitterIcon } from "@/components/common/icons";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const { loading, setLoading } = useStore();
@@ -43,9 +45,26 @@ export default function Home() {
             initial={{ opacity: 0.2 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
+            className="h-full"
           >
             <>
               <Navbar />
+
+              <div className="flex flex-col items-center justify-center mt-32 md:w-[500px] max-w-5xl mx-auto">
+                <p className="text-center font-bold font-mono bg-gradient-to-tr from-theme to-gray-200 bg-clip-text text-transparent text-2xl pt-3">
+                  Discover the magic of animated NFTs with Inkara NFT, an
+                  anime-inspired animated collection.
+                </p>
+                <div className="flex items-center gap-5 mt-5">
+                  <Button variant="theme" className="active:scale-9 text-lg">
+                    Follow
+                    <TwitterIcon className="w-5 h-5  text-[#f0bb40] mt-1  ml-2" />
+                  </Button>
+                  <Button variant="theme" className="active:scale-95 text-lg">
+                    Join <DiscordIcon className="w-5 h-5  mt-1 ml-2" />
+                  </Button>
+                </div>
+              </div>
 
               <div className="w-full absolute bottom-0  ">
                 <Footer />

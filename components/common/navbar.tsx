@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "About us", href: "/about-us" },
-  { name: "Whitepaper", href: "/whitepaper" },
+  { name: "Whitepaper", href: "/" },
   { name: "Team", href: "/team" },
 ];
 
@@ -90,7 +90,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black  py-5 px-3 sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-[100] w-full overflow-y-auto bg-black  py-5 px-3 sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <div className="z-10 ">
               <Link
@@ -119,13 +119,13 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="flex w-full items-center justify-center pt-6">
+              {/* <div className=" flex w-full items-center justify-center pt-6">
                 <Link href="/" className="">
                   <Button onClick={handleMobileMenu} variant="theme">
                     Connect Wallet
                   </Button>
                 </Link>
-              </div>
+              </div> */}
               <div className="flex flex-col items-center justify-center  py-6">
                 {navigation.map((item) => (
                   <Link
