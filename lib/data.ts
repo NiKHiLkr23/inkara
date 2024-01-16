@@ -20,7 +20,7 @@ export const teamData = [
   {
     name: "NiCk",
     role: "Developer",
-    twitterUrl: "",
+    twitterUrl: "https://twitter.com/nikhilkr1221",
     image: "https://inkara.s3.ap-south-1.amazonaws.com/rare-itachi.gif",
   },
   {

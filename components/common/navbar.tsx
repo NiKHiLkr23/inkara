@@ -7,10 +7,10 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { DiscordIcon, TwitterIcon } from "./icons";
 import { usePathname } from "next/navigation";
+import { toast } from "sonner";
 
 const navigation = [
   { name: "About us", href: "/about-us" },
-  { name: "Whitepaper", href: "/" },
   { name: "Team", href: "/team" },
 ];
 
@@ -55,6 +55,20 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </button>
         </div>
         <div className="hidden lg:flex lg:items-center lg:gap-x-12 lg:flex-1 lg:justify-end   ">
+          <Button
+            onClick={() =>
+              toast("Comming soon...", {
+                style: {
+                  backgroundColor: "#ffd538",
+                  fontSize: "1.25rem",
+                },
+              })
+            }
+            variant="theme"
+            className={` text-sm font-semibold leading-6 `}
+          >
+            Whitepaper
+          </Button>
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -127,12 +141,27 @@ const Navbar: FC<NavbarProps> = ({}) => {
                 </Link>
               </div> */}
               <div className="flex flex-col items-center justify-center  py-6">
+                <Button
+                  onClick={() => {
+                    toast("Comming soon...", {
+                      style: {
+                        backgroundColor: "#ffd538",
+                        fontSize: "1.25rem",
+                      },
+                    });
+                    handleMobileMenu();
+                  }}
+                  variant="link"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme"
+                >
+                  Whitepaper
+                </Button>
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={handleMobileMenu}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme"
                   >
                     {item.name}
                   </Link>

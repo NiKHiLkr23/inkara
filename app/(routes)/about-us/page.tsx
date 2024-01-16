@@ -4,7 +4,10 @@ export default function AboutUsPage() {
   return (
     <section className="flex flex-col items-center w-full max-w-5xl mx-auto p-4  lg:p-12 ">
       <h1 className="text-center text-2xl text-theme py-5">About us</h1>
-      <div className="flex flex-col md:flex-row items-center justify-around">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-around">
+        <div className="relative">
+          <LayoutCards />
+        </div>
         <div className="flex flex-col items-start justify-start md:w-1/2 ">
           <p className="text-justify font-mono bg-gradient-to-tr from-theme to-gray-200 bg-clip-text text-transparent lg:text-xl ">
             Discover the magic of animated NFTs with Inkara NFT, an
@@ -15,10 +18,6 @@ export default function AboutUsPage() {
             ownership, they unlock access to future drops, events, and a brand
             inkara NFT is Building.
           </p>
-        </div>
-
-        <div className="relative">
-          <LayoutCards />
         </div>
       </div>
       <div>

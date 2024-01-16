@@ -38,6 +38,8 @@ export default function TeamPage() {
                     href={item.twitterUrl}
                     prefetch={false}
                     className="ml-2"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     <TwitterIcon className="w-6 h-6 text-[#4d7ff1] cursor-pointer active:scale-95" />
                   </Link>
