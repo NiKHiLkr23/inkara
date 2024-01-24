@@ -1,8 +1,6 @@
 "use client";
-import React, { useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import { nftData } from "@/lib/data";
+import React from "react";
+import { nftData, nftVideoData } from "@/lib/data";
 import Autoplay from "embla-carousel-autoplay";
 
 import {
@@ -27,14 +25,14 @@ const LayoutCards = (): JSX.Element => {
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
-            {nftData.map((item, index) => (
+            {nftVideoData.map((item, index) => (
               <CarouselItem key={index}>
                 <div className=" ">
-                  <Image
-                    width={1000}
-                    height={1000}
-                    src={item.image}
-                    alt="Bonnie Avatar"
+                  <video
+                    src={item.videoUrl}
+                    autoPlay
+                    muted
+                    loop
                     className="rounded-lg w-[370px] lg:w-[500px] object-cover scale-95"
                   />
                 </div>

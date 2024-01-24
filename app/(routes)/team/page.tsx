@@ -1,5 +1,6 @@
 import { TwitterIcon } from "@/components/common/icons";
-import { teamData } from "@/lib/data";
+import { teamData, teamVideoData } from "@/lib/data";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ export default function TeamPage() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-5 w-full max-w-7xl mx-auto">
-          {teamData.map((item) => (
+          {/* {teamData.map((item) => (
             <div key={item.name} className="relative flex flex-col  ">
               <div className="rounded-lg overflow-hidden max-w-md md:max-w-sm bg-black">
                 <Image
@@ -26,6 +27,41 @@ export default function TeamPage() {
                   className="rounded-lg object-cover scale-95 opacity-80"
                   src={item.image}
                   alt="Bonnie Avatar"
+                />
+              </div>
+              <div className="absolute bottom-0 w-full bg-black/40">
+                <div className="flex items-center justify-center w-full  ">
+                  <p className="text-2xl font-bold tracking-tight text-white">
+                    {" "}
+                    {item.name}
+                  </p>
+                  {item.role === "Founder" && (
+                    <Link
+                      href={item.twitterUrl}
+                      prefetch={false}
+                      className="ml-2"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <TwitterIcon className="w-6 h-6 text-[#4d7ff1] cursor-pointer active:scale-95" />
+                    </Link>
+                  )}
+                </div>
+                <p className="text-lg mb-3 capitalize font-bold text-theme ">
+                  {item.role} @INKARA
+                </p>
+              </div>
+            </div>
+          ))} */}
+          {teamVideoData.map((item) => (
+            <div key={item.name} className="relative flex flex-col  ">
+              <div className="rounded-lg overflow-hidden max-w-md md:max-w-sm bg-black">
+                <video
+                  src={item.videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  className="rounded-lg object-cover scale-95 opacity-80"
                 />
               </div>
               <div className="absolute bottom-0 w-full bg-black/40">

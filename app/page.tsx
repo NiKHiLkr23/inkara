@@ -46,12 +46,12 @@ export default function Home() {
             initial={{ opacity: 0.2 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="h-full"
+            className="h-full bg-bgPrimary bg-cover bg-no-repeat overflow-y-scroll overflow-x-hidden md:bg-none"
           >
             <>
               <Navbar />
 
-              <div className="flex flex-col items-center justify-center mt-32 md:w-[500px] max-w-5xl mx-auto">
+              {/* <div className="flex flex-col items-center justify-center mt-32 md:w-[500px] max-w-5xl mx-auto">
                 <p className="text-center font-bold font-mono bg-gradient-to-tr from-theme to-gray-200 bg-clip-text text-transparent text-2xl pt-3">
                   Discover the magic of animated NFTs with Inkara NFT, an
                   anime-inspired animated collection.
@@ -79,7 +79,7 @@ export default function Home() {
                     </Button>
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
               <div className="w-full absolute bottom-0  ">
                 <Footer />

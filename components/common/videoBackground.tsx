@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function VideoBackground() {
   return (
@@ -10,11 +11,12 @@ export default function VideoBackground() {
     >
       {/* Background video */}
       <video
-        src="https://inkara-nft.s3.amazonaws.com/theme-background-video.mp4"
+        // src="https://inkara-nft.s3.amazonaws.com/theme-background-video.mp4"
+        src="https://inkara-nft.s3.amazonaws.com/assets/background-video.mp4"
         autoPlay
         muted
         loop
-        className={cn("bgvideo", "opacity-60")}
+        className={cn("bgvideo", "hidden md:block")}
       />
     </div>
   );

@@ -81,7 +81,8 @@ module.exports = {
         "in-out": "cubic-bezier(0.2, 1, 0.25, 1)",
       },
       backgroundImage: {
-        bgPrimary: "url('/images/background-img.jpg')",
+        bgPrimary: "url('/images/theme-background-img.jpg')",
+        bgSecondary: "url('/images/background-img.jpg')",
       },
     },
   },
