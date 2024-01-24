@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "inkara.s3.ap-south-1.amazonaws.com",
+        hostname: "inkara-nft.s3.amazonaws.com",
       },
     ],
   },

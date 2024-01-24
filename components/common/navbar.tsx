@@ -67,7 +67,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
             variant="theme"
             className={` text-sm font-semibold leading-6 `}
           >
-            Whitepaper
+            Roadmap
           </Button>
           {navigation.map((item) => (
             <Link
@@ -93,8 +93,23 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <Button variant="theme">Wallet</Button>
           </Link> */}
 
-          <TwitterIcon className="w-8 h-8 text-[#f0bb40] cursor-pointer active:scale-95" />
-          <DiscordIcon className="w-8 h-8 cursor-pointer active:scale-95" />
+          <Link
+            href="https://twitter.com/InkaraNFT"
+            prefetch={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <TwitterIcon className="w-8 h-8 text-[#f0bb40] cursor-pointer active:scale-95" />
+          </Link>
+
+          <Link
+            href="https://discord.com/invite/inkaranft"
+            prefetch={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <DiscordIcon className="w-8 h-8 cursor-pointer active:scale-95" />
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -154,7 +169,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
                   variant="link"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme"
                 >
-                  Whitepaper
+                  Roadmap
                 </Button>
                 {navigation.map((item) => (
                   <Link
@@ -169,8 +184,23 @@ const Navbar: FC<NavbarProps> = ({}) => {
               </div>
 
               <div className="flex items-center justify-center gap-10">
-                <TwitterIcon className="w-8 h-8 text-[#f0bb40] cursor-pointer active:scale-95" />
-                <DiscordIcon className="w-8 h-8 cursor-pointer active:scale-95" />
+                <Link
+                  href="https://twitter.com/InkaraNFT"
+                  prefetch={false}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <TwitterIcon className="w-8 h-8 text-[#f0bb40] cursor-pointer active:scale-95" />
+                </Link>
+
+                <Link
+                  href="https://discord.com/invite/inkaranft"
+                  prefetch={false}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <DiscordIcon className="w-8 h-8 cursor-pointer active:scale-95" />
+                </Link>
               </div>
             </div>
           </div>

@@ -80,7 +80,14 @@ module.exports = {
       transitionTimingFunction: {
         "in-out": "cubic-bezier(0.2, 1, 0.25, 1)",
       },
+      backgroundImage: {
+        bgPrimary: "url('/images/background-img.jpg')",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };

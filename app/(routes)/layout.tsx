@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-full md:h-screen flex flex-col ">
+    <div className="h-screen bg-bgPrimary bg-cover bg-no-repeat overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80   md:h-screen flex flex-col ">
       <Navbar />
       <main className=" ">{children}</main>
       <div className="flex flex-col grow justify-end">

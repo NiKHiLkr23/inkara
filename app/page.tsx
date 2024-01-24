@@ -10,6 +10,7 @@ import Navbar from "@/components/common/navbar";
 import VideoBackground from "@/components/common/videoBackground";
 import { DiscordIcon, TwitterIcon } from "@/components/common/icons";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   const { loading, setLoading } = useStore();
@@ -56,13 +57,27 @@ export default function Home() {
                   anime-inspired animated collection.
                 </p>
                 <div className="flex items-center gap-5 mt-5">
-                  <Button variant="theme" className="active:scale-9 text-lg">
-                    Follow
-                    <TwitterIcon className="w-5 h-5  text-[#f0bb40] mt-1  ml-2" />
-                  </Button>
-                  <Button variant="theme" className="active:scale-95 text-lg">
-                    Join <DiscordIcon className="w-5 h-5  mt-1 ml-2" />
-                  </Button>
+                  <Link
+                    href="https://twitter.com/InkaraNFT"
+                    prefetch={false}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Button variant="theme" className="active:scale-9 text-lg">
+                      Follow
+                      <TwitterIcon className="w-5 h-5  text-[#f0bb40] mt-1  ml-2" />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://discord.com/invite/inkaranft"
+                    prefetch={false}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Button variant="theme" className="active:scale-95 text-lg">
+                      Join <DiscordIcon className="w-5 h-5  mt-1 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
 

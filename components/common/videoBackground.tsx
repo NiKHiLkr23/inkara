@@ -10,7 +10,7 @@ export default function VideoBackground() {
     >
       {/* Background video */}
       <video
-        src="https://inkara.s3.ap-south-1.amazonaws.com/promotional+work+final.mp4"
+        src="https://inkara-nft.s3.amazonaws.com/theme-background-video.mp4"
         autoPlay
         muted
         loop
