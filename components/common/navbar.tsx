@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import Link from "next/link";
 import { MenuSquare, X } from "lucide-react";
@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import { DiscordIcon, TwitterIcon } from "./icons";
 import { usePathname } from "next/navigation";
 import { toast } from "sonner";
+import useScroll from "@/lib/hooks/use-scroll";
 
 const navigation = [
   { name: "About us", href: "/about-us" },
@@ -26,8 +27,16 @@ const Navbar: FC<NavbarProps> = ({}) => {
   };
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50  flex flex-col w-full max-w-7xl mx-auto ">
-      <nav className="flex items-center justify-between pt-5 px-3 lg:px-8 ">
+    <header
+      className={`fixed inset-x-0 top-0  flex flex-col w-full max-w-7xl mx-auto
+    shadow-md  z-50 ${
+      pathname.startsWith("/team") || pathname.startsWith("/about-us")
+        ? "bg-black/70"
+        : ""
+    }
+    `}
+    >
+      <nav className="flex items-center justify-between pt-4 md:pt-2 px-4 lg:px-8 ">
         <div className="z-10 ">
           <Link
             href="/"

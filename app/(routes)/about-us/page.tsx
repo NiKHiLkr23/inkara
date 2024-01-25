@@ -1,9 +1,16 @@
 import LayoutCards from "@/components/about-us/layout-card";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+};
 
 export default function AboutUsPage() {
   return (
     <section className="flex flex-col items-center w-full max-w-6xl mx-auto p-4  lg:p-12 ">
-      <h1 className="text-center text-2xl text-theme py-5">About us</h1>
+      <h1 className="text-center text-3xl text-theme pt-20 md:pt-10 pb-5">
+        About us
+      </h1>
       <div className="flex flex-col-reverse md:flex-row items-center justify-around w-full ">
         <LayoutCards />
 

@@ -1,14 +1,17 @@
 import { TwitterIcon } from "@/components/common/icons";
 import { teamData, teamVideoData } from "@/lib/data";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Team",
+};
 
 export default function TeamPage() {
   return (
     <section className="">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-        <div className="mx-auto mb-24 max-w-screen-sm lg:mb-16">
+        <div className="mx-auto mt-20 md:mt-10 mb-24 max-w-screen-sm lg:mb-16">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-theme">
             Our team
           </h2>

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 const LayoutCards = (): JSX.Element => {
   const plugin = React.useRef(
-    Autoplay({ delay: 10000, stopOnInteraction: false })
+    Autoplay({ delay: 3500, stopOnInteraction: false })
   );
 
   return (

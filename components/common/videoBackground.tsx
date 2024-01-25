@@ -16,7 +16,7 @@ export default function VideoBackground() {
         autoPlay
         muted
         loop
-        className={cn("bgvideo", "hidden md:block")}
+        className={cn("bgvideo", "hidden md:block md:object-center")}
       />
     </div>
   );
