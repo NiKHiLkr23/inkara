@@ -15,7 +15,9 @@ import {
   SkipForward,
   X,
 } from "lucide-react";
+import { useStore } from "@/store/store";
 export default function AudioPlayer() {
+  const { loading } = useStore();
   const [playing, setPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [volume, setVolume] = useState(0.5);
@@ -52,10 +54,12 @@ export default function AudioPlayer() {
 
   return (
     <motion.div
-      style={{ width: player ? "320px" : "50px" }}
+      style={{ width: player ? "200px" : "50px" }}
       transition={{ duration: 1 }}
-      className={` bg-theme/60 p-2 flex items-center  fixed bottom-10 z-50 transition-all duration-1000 ease-in-out  ${
-        player ? " justify-end w-full max-w-[320px]" : ""
+      className={` ${
+        loading && "hidden"
+      } bg-theme/60 p-2 flex items-center  justify-center  fixed bottom-10 z-50 transition-all duration-1000 ease-in-out  ${
+        player ? " w-full max-w-[320px]" : ""
       } rounded-xl mx-5
       
       hover:animate-background bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-400  shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]"
@@ -74,9 +78,9 @@ export default function AudioPlayer() {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.5 }}
-          className={`flex flex-1 items-center  rounded-xl justify-end`}
+          className={`flex flex-1 items-center  rounded-xl justify-center`}
         >
-          <AudioLines className="animate-pulse" />
+          <AudioLines className="animate-pulse mr-2" />
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -104,10 +108,10 @@ export default function AudioPlayer() {
             <SkipForward className="w-5 h-5 mx-2" />
           </motion.button>
 
-          <VolumeSlider
+          {/* <VolumeSlider
             className="w-40 mx-2 z-50 "
             onValueChange={(value) => handleVolumeChange(value)}
-          />
+          /> */}
         </motion.div>
       ) : playing ? (
         <motion.button

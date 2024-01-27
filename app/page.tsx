@@ -47,9 +47,6 @@ export default function Home() {
             className="h-full bg-bgPrimary bg-cover bg-no-repeat overflow-y-scroll overflow-x-hidden md:bg-none "
           >
             <Navbar />
-            <div className="flex w-full bg-red-100 max-w-6xl mx-auto">
-              <AudioPlayer />
-            </div>
 
             <div className="w-full absolute bottom-0  ">
               <Footer />
