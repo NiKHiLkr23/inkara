@@ -66,7 +66,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <div className="hidden lg:flex lg:items-center lg:gap-x-12 lg:flex-1 lg:justify-end   ">
           <Button
             onClick={() =>
-              toast("Comming soon...", {
+              toast("Coming soon...", {
                 style: {
                   backgroundColor: "#ffd538",
                   fontSize: "1.25rem",
@@ -167,7 +167,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               <div className="flex flex-col items-center justify-center  py-6">
                 <Button
                   onClick={() => {
-                    toast("Comming soon...", {
+                    toast("Coming soon...", {
                       style: {
                         backgroundColor: "#ffd538",
                         fontSize: "1.25rem",

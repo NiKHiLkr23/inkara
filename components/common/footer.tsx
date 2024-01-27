@@ -7,7 +7,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <footer className="p-5">
+    <footer className="p-3 md:p-5">
       <div className="flex justify-center  max-w-7xl mx-auto  text-theme ">
         <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
           <span className="font-semibold text-base">©2024 INKARA</span>
